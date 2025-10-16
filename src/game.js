@@ -158,12 +158,12 @@ export class Game {
         if (this.player) {
             this.player.update(dt);
             
-            // Bounds Check (mit logischen Dimensionen)
-            if (this.player.y + this.player.height > this.height ||
-                this.player.y < 0) {
-                this.gameOver();
-                return;
-            }
+            // Bounds Check (DEAKTIVIERT)
+            // if (this.player.y + this.player.height > this.height ||
+            //     this.player.y < 0) {
+            //     this.gameOver();
+            //     return;
+            // }
         }
         
         // World Update (Scrolling)
