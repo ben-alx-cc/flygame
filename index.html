@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#87CEEB">
+    
+    <!-- iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sky Runner">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.webmanifest">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="icons/icon-192.svg">
+    <link rel="icon" type="image/svg+xml" sizes="192x192" href="icons/icon-192.svg">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.svg">
+    <link rel="apple-touch-startup-image" href="icons/splash-640x1136.svg">
+    
+    <title>Sky Runner - Mini Flugsimulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Canvas -->
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen">
+            <h1>🛩️ Sky Runner</h1>
+            <p class="subtitle">Mini Flugsimulator</p>
+            <button id="startButton" class="btn-primary">Tap to Start</button>
+            <div id="installHint" class="install-hint hidden">
+                <span>📱 Zum Home-Bildschirm hinzufügen für bestes Erlebnis!</span>
+            </div>
+        </div>
+        
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+            <div class="hud-top">
+                <div class="score-display">
+                    <span id="scoreText">0</span>
+                    <span class="coins">🪙 <span id="coinCount">0</span></span>
+                </div>
+                <div class="controls">
+                    <button id="muteButton" class="icon-btn" aria-label="Ton an/aus">🔊</button>
+                    <button id="pauseButton" class="icon-btn" aria-label="Pause">⏸️</button>
+                </div>
+            </div>
+            <div class="fps-counter" id="fpsCounter">60 FPS</div>
+        </div>
+        
+        <!-- Pause Overlay -->
+        <div id="pauseOverlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>⏸️ PAUSE</h2>
+                <button id="resumeButton" class="btn-primary">Weiter</button>
+                <button id="settingsFromPauseButton" class="btn-secondary">Einstellungen</button>
+                <button id="quitButton" class="btn-secondary">Beenden</button>
+            </div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>💥 Game Over</h2>
+                <div class="stats">
+                    <p>Score: <span id="finalScore">0</span></p>
+                    <p>Highscore: <span id="highscoreDisplay">0</span></p>
+                    <p class="new-highscore hidden" id="newHighscoreText">🏆 Neuer Rekord!</p>
+                </div>
+                <button id="restartButton" class="btn-primary">Nochmal</button>
+                <button id="settingsFromGameOverButton" class="btn-secondary">Einstellungen</button>
+                <button id="homeButton" class="btn-secondary">Hauptmenü</button>
+            </div>
+        </div>
+        
+        <!-- Settings Modal -->
+        <div id="settingsModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>⚙️ Einstellungen</h2>
+                <div class="setting-row">
+                    <label for="volumeSlider">Lautstärke</label>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                    <span id="volumeValue">70%</span>
+                </div>
+                <div class="setting-row">
+                    <label for="sensitivitySlider">Boost-Stärke</label>
+                    <input type="range" id="sensitivitySlider" min="50" max="150" value="100">
+                    <span id="sensitivityValue">100%</span>
+                </div>
+                <div class="setting-row">
+                    <label for="graphicsSelect">Grafik</label>
+                    <select id="graphicsSelect">
+                        <option value="normal">Normal</option>
+                        <option value="low">Niedrig</option>
+                    </select>
+                </div>
+                <div class="setting-row">
+                    <label for="vibrationToggle">Vibration</label>
+                    <input type="checkbox" id="vibrationToggle" checked>
+                </div>
+                <button id="closeSettingsButton" class="btn-primary">Schließen</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+{
+  "name": "sky-runner",
+  "version": "1.0.0",
+  "description": "Ein minimalistischer Side-Scrolling Flugsimulator als PWA",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx http-server -p 8000 -c-1",
+    "icons:generate": "node generate-icons.js",
+    "icons:png": "python3 create-icons.py || echo 'Install Pillow: pip3 install Pillow'",
+    "deploy:netlify": "netlify deploy --prod",
+    "deploy:vercel": "vercel --prod",
+    "audit:lighthouse": "npx lighthouse http://localhost:8000 --view",
+    "audit:pwa": "npx lighthouse http://localhost:8000 --preset=pwa --view"
+  },
+  "keywords": [
+    "pwa",
+    "game",
+    "canvas",
+    "vanilla-js",
+    "side-scroller",
+    "flight-simulator",
+    "mobile",
+    "ios",
+    "offline-first"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/sky-runner.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
+
+

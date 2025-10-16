@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640" height="1136" viewBox="0 0 640 1136" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="splashBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="640" height="1136" fill="url(#splashBg)"/>
+  
+  <text x="320" y="500" font-family="-apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="80" font-weight="bold" fill="white" text-anchor="middle">
+    🛩️ Sky Runner
+  </text>
+  
+  <text x="320" y="600" font-family="-apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="40" fill="rgba(255,255,255,0.8)" text-anchor="middle">
+    Mini Flugsimulator
+  </text>
+</svg>
