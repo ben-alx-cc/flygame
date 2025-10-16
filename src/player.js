@@ -15,7 +15,7 @@ export class Player {
         this.width = 50;
         this.height = 35;
         this.x = 120; // Fixe X-Position (links im Screen)
-        this.y = canvasHeight / 2;
+        this.y = canvasHeight / 2 - this.height / 2; // Zentriert mit Höhenkorrektur
         
         // Physik
         this.velocityY = 0;
@@ -37,12 +37,18 @@ export class Player {
     }
     
     reset() {
-        this.y = this.canvasHeight / 2;
+        this.y = this.canvasHeight / 2 - this.height / 2; // Zentriert mit Höhenkorrektur
         this.velocityY = 0;
         this.rotation = 0;
         this.targetRotation = 0;
         this.isBoosting = false;
         this.boostParticles = [];
+    }
+    
+    // Dimensionen aktualisieren (bei Resize)
+    updateDimensions(width, height) {
+        this.canvasWidth = width;
+        this.canvasHeight = height;
     }
     
     boost() {

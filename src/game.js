@@ -159,16 +159,8 @@ export class Game {
             this.player.update(dt);
             
             // Bounds Check (mit logischen Dimensionen)
-            // Debug: Log beim ersten Frame
-            if (this.gameTime < 0.1) {
-                console.log('Game dimensions:', this.width, 'x', this.height);
-                console.log('Player position:', this.player.y, 'height:', this.player.height);
-                console.log('Bottom check:', this.player.y + this.player.height, '>', this.height);
-            }
-            
             if (this.player.y + this.player.height > this.height ||
                 this.player.y < 0) {
-                console.error('Game Over triggered! Player.y:', this.player.y, 'Game.height:', this.height);
                 this.gameOver();
                 return;
             }

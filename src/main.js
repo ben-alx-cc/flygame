@@ -100,7 +100,12 @@ class App {
         const { width, height } = this.canvasSetup;
         
         // Player
-        this.game.player = new Player(width, height, this.ui.settings);
+        if (!this.game.player) {
+            this.game.player = new Player(width, height, this.ui.settings);
+        } else {
+            this.game.player.updateDimensions(width, height);
+            this.game.player.reset();
+        }
         
         // World
         this.game.world = new World(width, height, this.ui.settings);
